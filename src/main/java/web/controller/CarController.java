@@ -13,8 +13,8 @@ import java.util.List;
 public class CarController {
     CarService carService = new CarService();
     @GetMapping("/cars")
-    public String getCars(@RequestParam(value = "count", defaultValue = "5") Integer count, Model model) {
-        model.addAttribute("cars", carService.getCars().stream().limit(count).toArray());
+    public String getCars(@RequestParam("count") Integer count, Model model) {
+        model.addAttribute("cars", carService.getCars(count));
         return "cars";
     }
 }
