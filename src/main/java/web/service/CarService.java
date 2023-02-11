@@ -18,9 +18,7 @@ public class CarService {
         cars.add(car3);
         cars.add(car4);
         cars.add(car5);
-        if (count > 5) {
-            return cars.stream().limit(5).toList();
-        } else if (count <= 0) {
+        if (count > 5|| count <= 0) {
             return cars.stream().limit(5).toList();
         } else {
             return cars.stream().limit(count).toList();
