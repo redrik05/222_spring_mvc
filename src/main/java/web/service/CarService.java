@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarService {
-    static private List<Car> cars = new ArrayList<>();
+    private List<Car> cars = new ArrayList<>();
 
     public List<Car> getCarsToDisplay(Integer count) {
         Car car1 = new Car("LADA", "Ivan");
@@ -14,23 +14,23 @@ public class CarService {
         Car car3 = new Car("LADA", "Ian");
         Car car4 = new Car("LADA", "Ivar");
         Car car5 = new Car("LADA", "Anna");
-        cars.add(car1);
-        cars.add(car2);
-        cars.add(car3);
-        cars.add(car4);
-        cars.add(car5);
+        getCars().add(car1);
+        getCars().add(car2);
+        getCars().add(car3);
+        getCars().add(car4);
+        getCars().add(car5);
         if (count > 5|| count <= 0) {
-            return cars.stream().limit(5).toList();
+            return getCars().stream().limit(5).toList();
         } else {
-            return cars.stream().limit(count).toList();
+            return getCars().stream().limit(count).toList();
         }
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 
     public void setCars(List<Car> cars) {
         this.cars = cars;
-    }
-
-    public static List<Car> getCars() {
-        return cars;
     }
 }
