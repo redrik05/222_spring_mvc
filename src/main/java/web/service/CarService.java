@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarService {
-    private List<Car> cars = new ArrayList<>();
-    public List<Car> getCars(Integer count) {
+    static private List<Car> cars = new ArrayList<>();
+
+    public List<Car> getCarsToDisplay(Integer count) {
         Car car1 = new Car("LADA", "Ivan");
         Car car2 = new Car("LADA", "Anton");
         Car car3 = new Car("LADA", "Ian");
@@ -27,5 +28,9 @@ public class CarService {
 
     public void setCars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    public static List<Car> getCars() {
+        return cars;
     }
 }
